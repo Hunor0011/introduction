@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geek's Corner - My Hack The Box Badge</title>
+    <style>
+        /* Enhanced Matrix-style background styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #33ff33;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .matrix-char {
+            position: absolute;
+            top: -20px;
+            font-size: 20px;
+            color: rgba(51, 255, 51, 0.7);
+            animation: move linear infinite;
+        }
+
+        @keyframes move {
+            0% { top: -20px; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .content {
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px; /* Maximum width */
+            background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #4ec9b0;
+        }
+
+        .badge-container {
+            background-color: #252526;
+            border: 3px solid #4ec9b0;
+            border-radius: 10px;
+            padding: 30px;
+            display: inline-block;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            margin: 0 auto; /* Center the badge container */
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ce9178;
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix">
+        <script>
+            // JavaScript for enhanced matrix effect
+            var characters = ['0', '1'];
+            var matrixElement = document.querySelector('.matrix');
+
+            for (var i = 0; i < 300; i++) {
+                var element = document.createElement('span');
+                element.classList.add('matrix-char');
+                element.textContent = characters[Math.floor(Math.random() * characters.length)];
+                element.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+                element.style.fontSize = (Math.random() * 10 + 14) + 'px';
+                element.style.animationDuration = Math.random() * 5 + 5 + 's';
+                matrixElement.appendChild(element);
+            }
+        </script>
+    </div>
+    <div class="content">
+        <h1>Welcome to My Geek's Corner</h1>
+        <div class="badge-container">
+            <!-- Hack The Box badge script -->
+            <script src="https://www.hackthebox.eu/badge/1058822"></script>
+        </div>
+        <p class="description">Proud member of the hacking community. Exploring, learning, and growing one hack at a time.</p>
+    </div>
+</body>
+</html>
